@@ -10,7 +10,7 @@ namespace HealthyTooth.Models
     {
         public int DoctorId { get; set; }
         public string Name { get; set; }
-        public string ShortDescription { get; set; }
+        public string ServiceDescription { get; set; }
         public string LongDescription { get; set; }
         public string ImagePath { get; set; }
     }
