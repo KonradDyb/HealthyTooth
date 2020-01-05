@@ -28,6 +28,13 @@ namespace HealthyTooth.Controllers
             return View(homeViewModel);
         }
 
-        
+        public IActionResult Details(int id)
+        {
+            var doctor = _doctorRepository.GetDoctorById(id);
+
+            if (doctor == null) return NotFound();
+
+            return View(doctor);
+        }
     }
 }

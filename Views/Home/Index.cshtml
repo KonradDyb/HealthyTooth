@@ -11,7 +11,9 @@
         <div class="thumbnail">
             <img src="~/images/@doctor.ImagePath" />
             <div class="caption">
-                <h2>@doctor.Name</h2>
+                <h3>
+                <a asp-controller="Home" asp-action="Details" asp-route-id="@doctor.DoctorId">@doctor.Name</a>
+                </h3>
                 <h3>Usługa: @doctor.ServiceDescription</h3>
             </div>
         </div>

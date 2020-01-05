@@ -1,0 +1,14 @@
+﻿@model Doctor
+
+<h1>Details of our dentist</h1>
+
+<div class="thumbnail">
+    <img alt="@Model.Name" src="~/images/@Model.ImagePath" />
+    <div class="caption-full">
+        <h3>
+            <a href="#">@Model.Name</a>
+        </h3>
+        <h4>@Model.ServiceDescription</h4>
+        <p>@Model.LongDescription</p>
+    </div>
+</div>
