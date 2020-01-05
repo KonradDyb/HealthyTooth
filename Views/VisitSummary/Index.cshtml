@@ -1,0 +1,28 @@
+﻿
+
+@model VisitSummaryViewModel
+
+<h2>Your visit summary</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Service</th>
+            <th>Doctor Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var line in Model.VisitSummary.VisitSummaryItems)
+        {
+            <tr>
+                <td class="text-left">@line.Doctor.ServiceDescription</td>
+                <td class="text-left">@line.Doctor.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<div class="text-center">
+    <a class="btn btn-primary" asp-controller="Order" asp-action="Checkout">Check out now!</a>
+</div>
+
