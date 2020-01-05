@@ -8,7 +8,7 @@ namespace HealthyTooth.Models
 {
     public class VisitDetails
     {
-        public int VisitDetailId { get; set; }
+        public int VisitDetailsId { get; set; }
         public int VisitId { get; set; }
         public int DoctorId { get; set; }
         public Doctor Doctor { get; set; }
