@@ -7,16 +7,6 @@
 
 @foreach (var doctor in Model.Doctors)
 {
-    <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="thumbnail">
-            <img src="~/images/@doctor.ImagePath" />
-            <div class="caption">
-                <h3>
-                <a asp-controller="Home" asp-action="Details" asp-route-id="@doctor.DoctorId">@doctor.Name</a>
-                </h3>
-                <h3>Usługa: @doctor.ServiceDescription</h3>
-            </div>
-        </div>
-    </div>
-
+   <partial name="_DoctorCard" model="doctor" />
 }
+ 

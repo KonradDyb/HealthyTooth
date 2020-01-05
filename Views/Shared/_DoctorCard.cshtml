@@ -1,0 +1,13 @@
+﻿@model Doctor
+
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <img src="~/images/@Model.ImagePath" />
+        <div class="caption">
+            <h3>
+                <a asp-controller="Home" asp-action="Details" asp-route-id="@Model.DoctorId">@Model.Name</a>
+            </h3>
+            <h3>Usługa: @Model.ServiceDescription</h3>
+        </div>
+    </div>
+</div>
