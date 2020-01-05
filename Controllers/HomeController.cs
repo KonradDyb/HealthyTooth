@@ -24,6 +24,7 @@ namespace HealthyTooth.Controllers
         {
             var homeViewModel = new HomeViewModel();
             homeViewModel.Doctors = _doctorRepository.AllDoctors;
+            ViewBag.Title = "Healthy Tooth";
             return View(homeViewModel);
         }
 
