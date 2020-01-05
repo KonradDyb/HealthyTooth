@@ -30,7 +30,7 @@ namespace HealthyTooth
             services.AddDbContext<AppDbContext>(options => 
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
-            services.AddScoped<IDoctorRepository, MockDoctorRepository>();
+            services.AddScoped<IDoctorRepository, DoctorRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

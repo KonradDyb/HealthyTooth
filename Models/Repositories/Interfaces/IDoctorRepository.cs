@@ -9,6 +9,6 @@ namespace HealthyTooth.Models.Repositories.Interfaces
     public interface IDoctorRepository
     {
         IEnumerable<Doctor> AllDoctors { get; }
-        Doctor GetDoctorById(int id);
+        Doctor GetDoctorById(int doctorId);
     }
 }
