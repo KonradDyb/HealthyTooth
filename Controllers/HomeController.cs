@@ -23,7 +23,6 @@ namespace HealthyTooth.Controllers
             return View();
         }
 
-       
-
+        
     }
 }
