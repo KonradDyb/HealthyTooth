@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using HealthyTooth.Models;
+using HealthyTooth.Models.Repositories.Interfaces;
+using HealthyTooth.ViewModels;
 
 namespace HealthyTooth.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IDoctorRepository _doctorRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IDoctorRepository doctorRepository)
         {
-            _logger = logger;
+            _doctorRepository = doctorRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var homeViewModel = new HomeViewModel();
+            homeViewModel.Doctors = _doctorRepository.AllDoctors;
+            return View(homeViewModel);
         }
 
         

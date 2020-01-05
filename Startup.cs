@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HealthyTooth.Models.Repositories;
+using HealthyTooth.Models.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +26,7 @@ namespace HealthyTooth
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddScoped<IDoctorRepository, MockDoctorRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
