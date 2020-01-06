@@ -30,8 +30,9 @@ namespace HealthyTooth
             services.AddDbContext<AppDbContext>(options => 
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
-            services.AddScoped<VisitSummary>(x => VisitSummary.GetSummary(x));
             services.AddScoped<IDoctorRepository, DoctorRepository>();
+            services.AddScoped<IVisitRepository, VisitRepository>();
+            services.AddScoped<VisitSummary>(x => VisitSummary.GetSummary(x));
             services.AddHttpContextAccessor();
             services.AddSession();
         }

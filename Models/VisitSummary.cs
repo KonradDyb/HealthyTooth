@@ -30,13 +30,13 @@ namespace HealthyTooth.Models
 
             var context = services.GetService<AppDbContext>();
 
-            string visitSummaryId= session.GetString("VisitId") ?? Guid.NewGuid().ToString();
+            string summaryId= session.GetString("SummaryId") ?? Guid.NewGuid().ToString();
             // return this value if it isn't null ?? otherwise return this value
 
-            session.SetString("VisitId", visitSummaryId); // guid string will be stored in the session
+            session.SetString("SummaryId", summaryId); // guid string will be stored in the session
 
 
-            return new VisitSummary(context) { VisitSummaryId = visitSummaryId };
+            return new VisitSummary(context) { VisitSummaryId = summaryId };
             // create an instance of the shopping cart, passing in that cart ID. 
         }
 

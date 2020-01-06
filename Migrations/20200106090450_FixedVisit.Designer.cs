@@ -4,14 +4,16 @@ using HealthyTooth.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HealthyTooth.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200106090450_FixedVisit")]
+    partial class FixedVisit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -96,9 +98,9 @@ namespace HealthyTooth.Migrations
                     b.ToTable("Visits");
                 });
 
-            modelBuilder.Entity("HealthyTooth.Models.VisitDetail", b =>
+            modelBuilder.Entity("HealthyTooth.Models.VisitDetails", b =>
                 {
-                    b.Property<int>("VisitDetailId")
+                    b.Property<int>("VisitDetailsId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -109,7 +111,7 @@ namespace HealthyTooth.Migrations
                     b.Property<int>("VisitId")
                         .HasColumnType("int");
 
-                    b.HasKey("VisitDetailId");
+                    b.HasKey("VisitDetailsId");
 
                     b.HasIndex("DoctorId");
 
@@ -138,7 +140,7 @@ namespace HealthyTooth.Migrations
                     b.ToTable("VisitSummaryItems");
                 });
 
-            modelBuilder.Entity("HealthyTooth.Models.VisitDetail", b =>
+            modelBuilder.Entity("HealthyTooth.Models.VisitDetails", b =>
                 {
                     b.HasOne("HealthyTooth.Models.Doctor", "Doctor")
                         .WithMany()

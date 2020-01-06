@@ -9,6 +9,7 @@ namespace HealthyTooth.Models
     public class Visit
     {
         public int VisitId { get; set; }
+        public List<VisitDetail> VisitDetails { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }

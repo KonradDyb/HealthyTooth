@@ -1,0 +1,66 @@
+﻿
+
+@model Visit
+
+    <form asp-action="CheckVisit" method="post" class="form-horizontal" role="form">
+
+        <div class="form-group">
+            <label asp-for="FirstName" class="col-md-2 control-label"></label>
+            <div class="col-md-5">
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="LastName" class="col-md-2 control-label"></label>
+            <div class="col-md-5">
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PhoneNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-5">
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="VisitDateTime" class="col-md-2 control-label"></label>
+            <div class="col-md-5">
+                <div id="flatpickrcontainer">
+                    <input asp-for="VisitDateTime" class="form-control" id="time" placeholder="Select Date.." data-input>
+                    <span asp-validation-for="VisitDateTime" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-5">
+                <input type="submit" class="btn btn-primary" value="Complete visit" />
+            </div>
+        </div>
+    </form>
+
+
+<script>
+
+    // js initialization
+
+    flatpickr.l10ns.default.firstDayOfWeek = 1; // Monday default is sunday
+
+    document.getElementById("flatpickrcontainer").flatpickr({
+        wrap: true,
+        weekNumbers: true,
+        enableTime: true, // enables timepicker default is false
+        time_24hr: true, // set to false for AM PM default is false
+        onChange: function (selectedDates, dateStr, instance) {
+            console.log("changed");
+        }
+    });
+</script>

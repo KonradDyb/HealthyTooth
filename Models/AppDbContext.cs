@@ -17,8 +17,8 @@ namespace HealthyTooth.Models
 
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Visit> Visits { get; set; }
-        public DbSet<VisitDetails> VisitDetails { get; set; }
         public DbSet<VisitSummaryItem> VisitSummaryItems { get; set; }
+        public DbSet<VisitDetail> VisitDetails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
