@@ -1,6 +1,6 @@
 ﻿@model Doctor
 
-<h1>Details of our dentist</h1>
+<h1>Informacje odnośnie naszych dentystów</h1>
 
 <div class="thumbnail">
     <img alt="@Model.Name" src="~/images/@Model.ImagePath" />
@@ -16,7 +16,7 @@
             <a class="btn btn-primary"
                asp-controller="VisitSummary"
                asp-action="AddToVisitSummary"
-               asp-route-doctorId="@Model.DoctorId">Sign Up</a>
+               asp-route-doctorId="@Model.DoctorId">Umów wizyte</a>
         </p>
     </div>
 </div>
