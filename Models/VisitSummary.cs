@@ -31,13 +31,13 @@ namespace HealthyTooth.Models
             var context = services.GetService<AppDbContext>();
 
             string summaryId= session.GetString("SummaryId") ?? Guid.NewGuid().ToString();
-            // return this value if it isn't null ?? otherwise return this value
+        
 
-            session.SetString("SummaryId", summaryId); // guid string will be stored in the session
+            session.SetString("SummaryId", summaryId); 
 
 
             return new VisitSummary(context) { VisitSummaryId = summaryId };
-            // create an instance of the shopping cart, passing in that cart ID. 
+             
         }
 
         public void AddToSummary (Doctor Doctor)

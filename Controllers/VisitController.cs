@@ -48,7 +48,7 @@ namespace HealthyTooth.Controllers
 
         public IActionResult CheckVisitComplete()
         {
-            ViewBag.Message = "Thank you for using our services. See you soon :) ";
+            ViewBag.Message = "Pomyślnie dodano wizyte.";
 
             return View();
         }
