@@ -14,10 +14,12 @@ namespace HealthyTooth.Controllers
     public class HomeController : Controller
     {
         private readonly IDoctorRepository _doctorRepository;
+        private readonly VisitSummary _visitSummary;
 
-        public HomeController(IDoctorRepository doctorRepository)
+        public HomeController(IDoctorRepository doctorRepository, VisitSummary visitSummary)
         {
             _doctorRepository = doctorRepository;
+            _visitSummary = visitSummary;
         }
 
         public IActionResult Index()
@@ -25,6 +27,7 @@ namespace HealthyTooth.Controllers
             var homeViewModel = new HomeViewModel();
             homeViewModel.Doctors = _doctorRepository.AllDoctors;
             ViewBag.Title = "Healthy Tooth";
+            _visitSummary.ClearSummary();
             return View(homeViewModel);
         }
 
