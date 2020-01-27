@@ -21,7 +21,7 @@ namespace HealthyTooth.Controllers
             _visitSummary = visitSummary;
         }
 
-        public ViewResult Index()
+        public IActionResult Index()
         {
             var items = _visitSummary.GetVisitSummaryItems();
             _visitSummary.VisitSummaryItems = items;
